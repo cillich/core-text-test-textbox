@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16095" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16084.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Text Box Test View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="TextBoxTestViewController" customModule="CoreTextTestProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x8f-cd-A3s" customClass="TextBoxTestView" customModule="CoreTextTestProject" customModuleProvider="target">
+                                <rect key="frame" x="20" y="118" width="374" height="220"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROq-DZ-DWj">
+                                <rect key="frame" x="5" y="802" width="131.5" height="50"/>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.23137254900000001" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="EyK-43-Udx"/>
+                                </constraints>
+                                <state key="normal" title="Left Align">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="leftAlignPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7kT-mh-c4G"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6a7-cA-95B">
+                                <rect key="frame" x="141.5" y="802" width="131" height="50"/>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.23137254900000001" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8XJ-du-8CO"/>
+                                </constraints>
+                                <state key="normal" title="Center Align">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="centerAlignPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cmk-oQ-V7F"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGf-e9-EX5">
+                                <rect key="frame" x="277.5" y="802" width="131.5" height="50"/>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.23137254900000001" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Bqm-Ez-R3q"/>
+                                </constraints>
+                                <state key="normal" title="Right Align">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="rightAlignPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="95h-zH-VOp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6a7-cA-95B" firstAttribute="leading" secondItem="ROq-DZ-DWj" secondAttribute="trailing" constant="5" id="1Ty-iv-XDf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="x8f-cd-A3s" secondAttribute="trailing" constant="20" id="8Pb-DK-NzT"/>
+                            <constraint firstItem="ROq-DZ-DWj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="Ax2-n9-DAD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ROq-DZ-DWj" secondAttribute="bottom" constant="10" id="Dqo-ul-qW4"/>
+                            <constraint firstItem="6a7-cA-95B" firstAttribute="width" secondItem="bGf-e9-EX5" secondAttribute="width" id="SuK-i1-hw7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6a7-cA-95B" secondAttribute="bottom" constant="10" id="YQO-yS-KjY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bGf-e9-EX5" secondAttribute="trailing" constant="5" id="cmx-S9-ebV"/>
+                            <constraint firstItem="x8f-cd-A3s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dSl-FQ-d7o"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="x8f-cd-A3s" secondAttribute="bottom" constant="524" id="hgS-fU-Vji"/>
+                            <constraint firstItem="x8f-cd-A3s" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="74" id="lao-zG-Lfg"/>
+                            <constraint firstItem="ROq-DZ-DWj" firstAttribute="width" secondItem="6a7-cA-95B" secondAttribute="width" id="mpH-qb-b73"/>
+                            <constraint firstItem="bGf-e9-EX5" firstAttribute="leading" secondItem="6a7-cA-95B" secondAttribute="trailing" constant="5" id="n7B-Hq-rx7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bGf-e9-EX5" secondAttribute="bottom" constant="10" id="qI8-zV-bdI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="textBoxView" destination="x8f-cd-A3s" id="zSj-pO-iVA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
+        </scene>
+    </scenes>
+</document>
