@@ -13,6 +13,7 @@ class TextBoxTestView: UIView {
     
     var stringText: String = "Hello World"
     var textAlignment: NSTextAlignment = NSTextAlignment.left
+    let hardCodedFontSize: CGFloat = 30
 
 
     // Only override draw() if you perform custom drawing.
@@ -21,7 +22,9 @@ class TextBoxTestView: UIView {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = textAlignment
         
-        let attrString = NSAttributedString(string: stringText, attributes: [NSAttributedString.Key.paragraphStyle : paragraphStyle, NSAttributedString.Key.font: UIFont(name: "Arial", size: 30)!])
+        let attrString = NSAttributedString(string: stringText,
+                                            attributes: [NSAttributedString.Key.paragraphStyle : paragraphStyle,
+                                                         NSAttributedString.Key.font: UIFont(name: "Arial", size: hardCodedFontSize)!])
         
         
         
@@ -58,7 +61,7 @@ class TextBoxTestView: UIView {
 //            let count: CFIndex = CTTypesetterSuggestLineBreak(typesetter, start, availableWidth)
 //
 //            let line: CTLine = CTTypesetterCreateLine(typesetter, CFRangeMake(start, count))
-//            context.textPosition = CGPoint(x: 5, y: bounds.size.height - (30.0 * lineNumber)) // 30 is hardcoded
+//            context.textPosition = CGPoint(x: 5, y: bounds.size.height - (hardCodedFontSize * lineNumber)) // 30 is hardcoded
 //            CTLineDraw(line, context)
 //            start += count
 //            lineNumber += 1
@@ -77,13 +80,23 @@ class TextBoxTestView: UIView {
             
             let line: CTLine = CTTypesetterCreateLine(typesetter, CFRangeMake(start, count))
             
-            // Alignment stuff?
-//            let flush: CGFloat = 0.5 // centered
-//            let flush: CGFloat = 0.0 // left aligned
-            let flush: CGFloat = 1.0 // right aligned
+            // Alignment stuff
+            var flush: CGFloat
+            
+            switch textAlignment {
+            case .left:
+                flush = 0.0
+            case .center:
+                flush = 0.5
+            case .right:
+                flush = 1.0
+            default:
+                flush = 0.0
+            }
+            
             let penOffset: CGFloat = CGFloat(CTLineGetPenOffsetForFlush(line, flush, availableWidth))
             
-            context.textPosition = CGPoint(x: 5 + penOffset, y: bounds.size.height - (30.0 * lineNumber)) // 30 is hardcoded
+            context.textPosition = CGPoint(x: 5 + penOffset, y: bounds.size.height - (hardCodedFontSize * lineNumber)) // 30 is hardcoded
             CTLineDraw(line, context)
             start += count
             lineNumber += 1
