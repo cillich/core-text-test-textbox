@@ -78,7 +78,9 @@ class TextBoxTestView: UIView {
             let line: CTLine = CTTypesetterCreateLine(typesetter, CFRangeMake(start, count))
             
             // Alignment stuff?
-            let flush: CGFloat = 0.5 // centered
+//            let flush: CGFloat = 0.5 // centered
+//            let flush: CGFloat = 0.0 // left aligned
+            let flush: CGFloat = 1.0 // right aligned
             let penOffset: CGFloat = CGFloat(CTLineGetPenOffsetForFlush(line, flush, availableWidth))
             
             context.textPosition = CGPoint(x: 5 + penOffset, y: bounds.size.height - (30.0 * lineNumber)) // 30 is hardcoded
