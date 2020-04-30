@@ -61,7 +61,7 @@ class TextBoxTestView: UIView {
 //            let count: CFIndex = CTTypesetterSuggestLineBreak(typesetter, start, availableWidth)
 //
 //            let line: CTLine = CTTypesetterCreateLine(typesetter, CFRangeMake(start, count))
-//            context.textPosition = CGPoint(x: 5, y: bounds.size.height - (hardCodedFontSize * lineNumber)) // 30 is hardcoded
+//            context.textPosition = CGPoint(x: 5, y: bounds.size.height - (hardCodedFontSize * lineNumber))
 //            CTLineDraw(line, context)
 //            start += count
 //            lineNumber += 1
@@ -96,7 +96,7 @@ class TextBoxTestView: UIView {
             
             let penOffset: CGFloat = CGFloat(CTLineGetPenOffsetForFlush(line, flush, availableWidth))
             
-            context.textPosition = CGPoint(x: 5 + penOffset, y: bounds.size.height - (hardCodedFontSize * lineNumber)) // 30 is hardcoded
+            context.textPosition = CGPoint(x: 5 + penOffset, y: bounds.size.height - (hardCodedFontSize * lineNumber))
             CTLineDraw(line, context)
             start += count
             lineNumber += 1
